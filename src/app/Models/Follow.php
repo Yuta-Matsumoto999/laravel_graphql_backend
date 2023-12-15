@@ -12,7 +12,7 @@ class Follow extends Model
     protected $fillable = [
         "account_id",
         "follow_id"
-    ]
+    ];
 
     /**
      * Get the account that owns the Follow

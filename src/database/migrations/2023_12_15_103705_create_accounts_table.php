@@ -15,7 +15,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('name', 100);
             $table->string('email', 100)->unique();
-            $table->string('icon_url', 1000)->nullale();
+            $table->string('icon_url', 1000)->nullable();
             $table->string('background_image_url', 1000)->nullable();
             $table->string('password', 100);
             $table->timestamps();

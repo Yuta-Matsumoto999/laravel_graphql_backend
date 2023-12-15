@@ -4,6 +4,10 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Account;
+use App\Models\Favorite;
+use App\Models\Follow;
+use App\Models\Tweet;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,5 +22,10 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        Account::factory(10)->create();
+        Tweet::factory(100)->create();
+        Follow::factory(100)->create();
+        Favorite::factory(20)->create();
     }
 }
