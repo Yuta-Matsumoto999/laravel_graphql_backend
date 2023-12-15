@@ -12,7 +12,7 @@ class Favorite extends Model
     protected $fillable = [
         "account_id",
         "tweet_id"
-    ]
+    ];
 
     /**
      * Get the account that owns the Favorite
