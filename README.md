@@ -77,8 +77,8 @@ php artisan key:generate
 ・Change the description of the .env file
 
 ```
-DB_CONNECTION=db
-DB_HOST=127.0.0.1
+DB_CONNECTION=mysql
+DB_HOST=db
 DB_PORT=3306
 DB_DATABASE=root_master
 DB_USERNAME=root
