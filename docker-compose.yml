@@ -1,0 +1,51 @@
+version: '1'
+
+services:
+  web:
+    container_name: web
+    build: 
+      context: ./infra/nginx
+    depends_on:
+      - app
+    ports:
+      - 80:80
+    volumes:
+      - ./src:/home/src
+      - ./infra/nginx/logs:/home/nginx/logs
+
+  app:
+    container_name: app
+    build:
+      context: ./infra/php/
+    depends_on:
+      - mysql
+    volumes:
+      - ./src:/home/src
+      - ./infra/php/php.ini:/usr/local/etc/php/php.ini
+    
+  mysql:
+    container_name: db
+    build: 
+      context: ./infra/mysql
+    command: --max_allowed_packet=32505856
+    volumes:
+      - db-store:/var/lib/mysql
+      - ./infra/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=root_master
+    ports:
+      - 3306:3306
+
+  redis:
+    container_name: redis
+    build: 
+      context: ./infra/redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - "redis-store:/data"
+    
+volumes:
+  db-store:
+  redis-store:
