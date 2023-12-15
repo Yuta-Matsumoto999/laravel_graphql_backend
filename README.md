@@ -22,7 +22,7 @@ To execute in a local environment, please follow the steps below.</br>
 
 ・Commands to operate docker are summarized in a makefile.</br>
 </br>
-[makefile](http://hoge.com)
+[makefile](https://github.com/Yuta-Matsumoto999/laravel_graphql_backend/blob/main/makefile)
 
 ### Prerequisites
 
@@ -33,7 +33,7 @@ To execute in a local environment, please follow the steps below.</br>
 ①Clone this repository
 </br>
 ```
-git clone <>
+git clone https://github.com/Yuta-Matsumoto999/laravel_graphql_backend.git
 ```
 </br>
 
