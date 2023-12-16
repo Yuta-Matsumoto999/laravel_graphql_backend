@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
 
         Account::factory(10)->create();
         Tweet::factory(100)->create();
-        Follow::factory(100)->create();
+        Follow::factory(10)->create();
         Favorite::factory(20)->create();
     }
 }

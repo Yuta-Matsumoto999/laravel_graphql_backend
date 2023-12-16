@@ -1,0 +1,33 @@
+scalar DateTime
+    @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
+
+type Query {
+    accounts: [Account!]! @all
+    tweets: [Tweet!]! @all
+    favorites: [Favorite!]! @all
+    follows: [Follow!]! @all
+}
+
+type Account  {
+  id: ID!
+  name: String!
+  email: String!
+  password: String!
+  created_at: DateTime!
+}
+
+type Tweet {
+    id: ID!
+    account_id: Int!
+    content: String!
+}
+
+type Favorite {
+  account_id: Int!
+  tweet_id: Int!
+}
+
+type Follow {
+  account_id: Int!
+  follow_id: Int!
+}
