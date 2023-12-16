@@ -16,16 +16,12 @@ class FollowFactory extends Factory
      */
     public function definition(): array
     {
-        $accountId = fake()->numberBetween(1, 10);
+        static $accountId = 1;
+        static $followId = 10;
+        
         return [
-            "account_id" => $accountId,
-            "follow_id" => function () use ($accountId) {
-                $followId = fake()->numberBetween(1, 10);
-                while ($followId === $accountId) {
-                    $followId = fake()->numberBetween(1, 10);
-                }
-                return $followId;
-            }
+            "account_id" => $accountId++,
+            "follow_id" => $followId--
         ];
     }
 }
