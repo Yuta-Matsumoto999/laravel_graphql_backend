@@ -1,0 +1,13 @@
+scalar DateTime
+    @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
+
+type Query {
+    #ツイートを全て取得
+    tweets: [Tweet!]! @all
+}
+
+type Tweet {
+    id: ID!
+    account_id: Int!
+    content: String!
+}
